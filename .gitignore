@@ -1,0 +1,13 @@
+det_lip/lip/model/gen_deep_speech/gen_deep_speech_v1.0.0.pb
+det_lip/lip/model/res/final.nnet
+det_lip/lip/model/gen_face_mode/gen_face_mode_v1.0.0.pb
+det_lip/lip/model/gen_proj_bfm/gen_proj_bfm_v1.0.0.pb
+det_lip/lip/libs/linux/gpu/libtensorflow_cc.so
+ai_model/det_logo_ssd_tf_GES_v1.0.1_tensorflow.pb
+3rdParty/tensorflow/r1.8/libs/Linux/cuda10/libtensorflow_cc.so
+3rdParty/tensorflow/r1.8/libs/Linux/cpu1/libtensorflow_cc.so
+bin/debug/lip/model/gen_deep_speech/gen_deep_speech_v1.0.0.pb
+bin/debug/lip/model/res/final.nnet
+bin/debug/lip/model/gen_face_mode/gen_face_mode_v1.0.0.pb
+bin/debug/lip/model/gen_proj_bfm/gen_proj_bfm_v1.0.0.pb
+base/libbase.a

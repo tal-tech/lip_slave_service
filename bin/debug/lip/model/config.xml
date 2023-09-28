@@ -1,0 +1,190 @@
+<log_level>4</log_level>
+<auth_app_key>TAL_test</auth_app_key>
+<auth_secret_key>A010986C699342A0220F4DFFF6327DF7D370157C</auth_secret_key>
+<user_name>AIEngineTest</user_name>
+
+<det_face_boxes>
+    <model_file>../../det_lip/lip/model/det_face_boxes/det_face_boxes_v1.0.1.pb</model_file>
+    <gpu_percent>0.5</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.1.2</version>
+    <inputs>
+        <input>
+            <name>image_tensor:0</name>
+            <type>uint8</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>boxes:0</name>
+        </output>
+        <output>
+            <name>scores:0</name>
+        </output>
+        <output>
+            <name>num_boxes:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+        <select_score>0.5</select_score>
+        <input_width_ratio>0.3</input_width_ratio>
+        <input_height_ratio>0.3</input_height_ratio>
+    </extra_params>
+</det_face_boxes>
+
+<det_landmark_tf>
+    <model_file>../../det_lip/lip/model/det_landmark_tf/det_landmark_tf_v1.0.1.pb</model_file>
+    <gpu_percent>0.2</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.1.2</version>
+    <inputs>
+        <input>
+            <name>image_batch:0</name>
+            <type>float</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>pfld_inference/fc/BiasAdd</name>
+        </output>
+    </outputs>
+    <extra_params>
+        <input_width>112</input_width>
+        <input_height>112</input_height>
+    </extra_params>
+</det_landmark_tf>
+
+
+<gen_face_mode>
+    <model_file>../../det_lip/lip/model/gen_face_mode/gen_face_mode_v1.0.0.pb</model_file>
+    <gpu_percent>0.2</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.0.1</version>
+    <inputs>
+        <input>
+            <name>input_imgs:0</name>
+            <type>float</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>coeff:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+        <input_width>224</input_width>
+        <input_height>224</input_height>
+    </extra_params>
+</gen_face_mode>
+
+
+<gen_deep_speech>
+    <model_file>../../det_lip/lip/model/gen_deep_speech/gen_deep_speech_v1.0.0.pb</model_file>
+    <gpu_percent>0.6</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.0.4</version>
+    <inputs>
+        <input>
+            <name>input_node:0</name>
+            <type>float</type>
+        </input>
+        <input>
+            <name>input_lengths:0</name>
+            <type>int32</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>logits:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+    </extra_params>
+</gen_deep_speech>
+
+<gen_voc_params>
+    <model_file>../../det_lip/lip/model/gen_voc_params/gen_voc_params_v1.0.0.pb</model_file>
+    <gpu_percent>0.2</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.0.3</version>
+    <inputs>
+        <input>
+            <name>input:0</name>
+            <type>float</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>output:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+        <select_score>0.35</select_score>
+        <input_width_ratio>0.3</input_width_ratio>
+        <input_height_ratio>0.3</input_height_ratio>
+    </extra_params>
+</gen_voc_params>
+
+<gen_proj_bfm>
+    <model_file>../../det_lip/lip/model/gen_proj_bfm/gen_proj_bfm_v1.0.0.pb</model_file>
+    <gpu_percent>0.2</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.0.1</version>
+    <inputs>
+        <input>
+            <name>args:0</name>
+            <type>float</type>
+        </input>
+        <input>
+            <name>trans:0</name>
+            <type>float</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>replace_region:0</name>
+        </output>
+        <output>
+            <name>tri:0</name>
+        </output>
+        <output>
+            <name>face_color:0</name>
+        </output>
+        <output>
+            <name>lmk:0</name>
+        </output>
+        <output>
+            <name>face_projection:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+    </extra_params>
+</gen_proj_bfm>
+
+<gen_mouth_gan>
+    <model_file>../../det_lip/lip/model/gen_mouth_gan/gen_mouth_gan_v1.0.1.pb</model_file>
+    <gpu_percent>0.2</gpu_percent>
+    <max_batch>1</max_batch>
+    <version>18.100.1.0.1.2</version>
+    <inputs>
+        <input>
+            <name>Inputs/images:0</name>
+            <type>float</type>
+        </input>
+        <input>
+            <name>Inputs/seq_fore:0</name>
+            <type>float</type>
+        </input>
+        <input>
+            <name>Inputs/is_trainging</name>
+            <type>bool</type>
+        </input>
+    </inputs>
+    <outputs>
+        <output>
+            <name>Model/generator/gen_image:0</name>
+        </output>
+    </outputs>
+    <extra_params>
+    </extra_params>
+</gen_mouth_gan>

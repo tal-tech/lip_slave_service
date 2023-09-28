@@ -1,0 +1,41 @@
+{
+	"version": 1.0,
+	"frame_shift_ms": 10,
+	"frame_length_ms": 25,
+	"sample_frequency": 16000,
+	"fbank": {
+		"htk_compat": false,
+		"window_type": "hamming",
+		"use_energy": false,
+		"dither": 1,
+		"num_mel_bins": 80
+	},
+	"mfcc": {
+		"use_energy": true,
+		"num_ceps": 26,
+		"num_mel_bins": 26,
+		"dither": 1,
+		"low_freq": 0,
+		"high_freq": 0
+	},
+	"nnet1": {
+		"no_softmax": true,
+		"prior_scale": 1.0,
+		"feature_transform_filename": "final.feature_transform",
+		"class_frame_counts_filename": "ali_train_pdf.counts",
+		"nnet1_model_filename": "final.nnet"
+	},
+	"align": {
+		"transition_scale": 1.0,
+		"acoustic_scale": 0.1,
+		"self_loop_scale": 0.1,
+		"beam": 10,
+		"retry_beam": 40
+	},
+	"word_syms_filename": "words.txt",
+	"model_filename": "final.mdl",
+	"l_fst_filename": "L.fst",
+	"phones_filename": "phones.txt",
+	"disambig_filename": "disambig.int",
+	"tree_filename": "tree"
+}
